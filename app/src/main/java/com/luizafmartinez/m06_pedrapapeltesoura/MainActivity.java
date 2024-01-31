@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -37,25 +38,25 @@ public class MainActivity extends AppCompatActivity {
 //        Random random = new Random();
 //        random.nextInt(3);
 
-        String[] opcoes = { "pedra", "papel", "tesoura" };
+        String[] opcoes = {"pedra", "papel", "tesoura"};
         int numeroAleatorio = new Random().nextInt(3); // 0,1,2
 
         ImageView imagemApp = findViewById(R.id.image_app);
 
         String escolhaApp = opcoes[numeroAleatorio];
 
-        switch ( escolhaApp ) {
+        switch (escolhaApp) {
 
             case "pedra":
-                imagemApp.setImageResource( R.drawable.pedra);
+                imagemApp.setImageResource(R.drawable.pedra);
                 break;
 
             case "papel":
-                imagemApp.setImageResource( R.drawable.papel);
+                imagemApp.setImageResource(R.drawable.papel);
                 break;
 
             case "tesoura":
-                imagemApp.setImageResource( R.drawable.tesoura);
+                imagemApp.setImageResource(R.drawable.tesoura);
                 break;
 
         }
@@ -63,10 +64,26 @@ public class MainActivity extends AppCompatActivity {
         return escolhaApp;
     }
 
-    private void verificarGanhador( String escolhaUsuario ) {
+    private void verificarGanhador(String escolhaUsuario) {
 
-        String escolhaApp = gerarEscolhaAleatoriaApp();
         //System.out.println("Item clicado: " + escolhaUsuario);
-    }
+        String escolhaApp = gerarEscolhaAleatoriaApp();
+        TextView textoResultado = findViewById(R.id.text_resultado);
 
+        if (
+                escolhaApp == "pedra"   && escolhaUsuario == "tesoura" ||
+                escolhaApp == "papel"   && escolhaUsuario == "pedra" ||
+                escolhaApp == "tesoura" && escolhaUsuario == "papel"
+        ) {  // App é ganhador
+            textoResultado.setText("Você perdeu.. :( ");
+        } else if (
+                escolhaUsuario == "pedra"   && escolhaApp == "tesoura" ||
+                escolhaUsuario == "papel"   && escolhaApp == "pedra" ||
+                escolhaUsuario == "tesoura" && escolhaApp == "papel"
+        ) {  // User é ganhador
+            textoResultado.setText("Você ganhou !! :) ");
+        } else {   //Empatou
+            textoResultado.setText("Empatamos. ;) ");
+        }
+    }
 }
