@@ -14,21 +14,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void selecionarPedra(View view) {
-
-
+        verificarGanhador("pedra");
     }
 
     public void selecionarPapel(View view) {
-
-
+        verificarGanhador("papel");
     }
 
     public void selecionarTesoura(View view) {
-
-
+        verificarGanhador("tesoura");
     }
 
-
-
+    private void verificarGanhador( String escolhaUsuario ) {
+        System.out.println("Item clicado: " + escolhaUsuario);
+    }
 
 }
