@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             case "tesoura":
                 imagemApp.setImageResource( R.drawable.tesoura);
                 break;
+
         }
 
         return escolhaApp;
