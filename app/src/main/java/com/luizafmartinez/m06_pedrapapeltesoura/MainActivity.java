@@ -72,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (
                 escolhaApp == "pedra" && escolhaUsuario == "tesoura" ||
-                        escolhaApp == "papel" && escolhaUsuario == "pedra" ||
-                        escolhaApp == "tesoura" && escolhaUsuario == "papel"
+                escolhaApp == "papel" && escolhaUsuario == "pedra" ||
+                escolhaApp == "tesoura" && escolhaUsuario == "papel"
         ) {  // App é ganhador
             textoResultado.setText("Você perdeu.. :( ");
         } else if (
                 escolhaUsuario == "pedra" && escolhaApp == "tesoura" ||
-                        escolhaUsuario == "papel" && escolhaApp == "pedra" ||
-                        escolhaUsuario == "tesoura" && escolhaApp == "papel"
+                escolhaUsuario == "papel" && escolhaApp == "pedra" ||
+                escolhaUsuario == "tesoura" && escolhaApp == "papel"
         ) {  // User é ganhador
             textoResultado.setText("Você ganhou !! :) ");
         } else {   //Empatou
