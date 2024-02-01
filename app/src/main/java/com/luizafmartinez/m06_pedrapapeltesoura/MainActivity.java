@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         verificarGanhador("tesoura");
     }
 
-
     private String gerarEscolhaAleatoriaApp() {
 
 //        Random random = new Random();
