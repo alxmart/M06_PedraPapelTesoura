@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //        random.nextInt(3);
 
         String[] opcoes = {"pedra", "papel", "tesoura"};
+
         int numeroAleatorio = new Random().nextInt(3); // 0,1,2
 
         ImageView imagemApp = findViewById(R.id.image_app);
@@ -67,19 +68,20 @@ public class MainActivity extends AppCompatActivity {
     private void verificarGanhador(String escolhaUsuario) {
 
         //System.out.println("Item clicado: " + escolhaUsuario);
+
         String escolhaApp = gerarEscolhaAleatoriaApp();
         TextView textoResultado = findViewById(R.id.text_resultado);
 
         if (
-                escolhaApp == "pedra"   && escolhaUsuario == "tesoura" ||
-                escolhaApp == "papel"   && escolhaUsuario == "pedra" ||
-                escolhaApp == "tesoura" && escolhaUsuario == "papel"
+                escolhaApp == "pedra" && escolhaUsuario == "tesoura" ||
+                        escolhaApp == "papel" && escolhaUsuario == "pedra" ||
+                        escolhaApp == "tesoura" && escolhaUsuario == "papel"
         ) {  // App é ganhador
             textoResultado.setText("Você perdeu.. :( ");
         } else if (
-                escolhaUsuario == "pedra"   && escolhaApp == "tesoura" ||
-                escolhaUsuario == "papel"   && escolhaApp == "pedra" ||
-                escolhaUsuario == "tesoura" && escolhaApp == "papel"
+                escolhaUsuario == "pedra" && escolhaApp == "tesoura" ||
+                        escolhaUsuario == "papel" && escolhaApp == "pedra" ||
+                        escolhaUsuario == "tesoura" && escolhaApp == "papel"
         ) {  // User é ganhador
             textoResultado.setText("Você ganhou !! :) ");
         } else {   //Empatou
