@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     private void verificarGanhador(String escolhaUsuario) {
 
         //System.out.println("Item clicado: " + escolhaUsuario);
-
         String escolhaApp = gerarEscolhaAleatoriaApp();
         TextView textoResultado = findViewById(R.id.text_resultado);
 
